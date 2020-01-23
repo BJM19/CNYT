@@ -34,9 +34,12 @@ def CartesianasAPolares(a):
     return t
 def adicionDeVectoresComplejos(a,b):
     res=[]
-    for i in range(len(b)):
-        res.append(suma(a[i],b[i]))
-    return res
+    if len(a)==len(b):
+        for i in range(len(b)):
+            res.append(suma(a[i],b[i]))
+        return res
+    else:
+        raise "dimensiones invalidas"
 def inverso(a):
     res=[]
     for i in range(len(a)):
@@ -47,5 +50,38 @@ def escalarVector(a,b):
     for i in range(len(a)):
         res.append(producto(b,a[i]))
     return res
+def sumaDeMatrices(a,b):
+    for i in range(len(a)):
+        res=[]
+        for j in range(len(b)):
+            res.append(suma(a[i][j],b[i][j]))
+    return [res]
+def inversaMatriz(a):
+    for i in range(len(a)):
+        res=[]
+        for j in range(len(a)):
+            res.append(opuesto(a[i][j]))
+    return [res]
+def multiplicacionEscalarMatrices(a,b):
+    for i in range(len(a)):
+        res=[]
+        for j in range(len(a)):
+            res.append(producto(b,a[i][j]))
+    return [res]
+def traspuesta(a):
+    m=[[0]*len(a[0])]*len(a)
+    for i in range(len(a)):
+        for j in range(len(a[0])):
+            m[i][j]=a[j][i]
+    return m
+def conjugadaMatriz(a):
+    for i in range(len(a)):
+        res=[]
+        for j in range(len(a)):
+            res.append(conjugado(a[i][j]))
+    return [res]
+def adjunta(a):
+    return (conjugadaMatriz(traspuesta(a)))
+           
 
 
