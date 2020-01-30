@@ -3,9 +3,9 @@ def suma(a,b):
     ar=a[0]+b[0]
     br=a[1]+b[1]
     return (ar,br)
-def suma(a,b):
-    ar=a[0]+b[0]
-    br=a[1]+b[1]
+def resta(a,b):
+    ar=a[0]-b[0]
+    br=a[1]-b[1]
     return (ar,br)
 def producto(a,b):
     ar=((a[0]*b[0])+((a[1]*b[1])*-1))
