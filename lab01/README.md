@@ -5,92 +5,92 @@ Se realizo una calculadora para números complejos con las operaciones algebraic
 Las operaciones son:
 1. **Suma**
 
-´´´
+```
 def suma(a,b):
     ar=a[0]+b[0]
     br=a[1]+b[1]
     return (ar,br)
-´´´
+```
 
 2. **Resta**
 
-´´´
+```
 def suma(a,b):
     ar=a[0]+b[0]
     br=a[1]+b[1]
     return (ar,br)
-´´´´
+```
 
 3. **Multiplicación**
 
-´´´
+```
 def producto(a,b):
     ar=((a[0]*b[0])+((a[1]*b[1])*-1))
     br=((a[0]*b[1])+(a[1]*b[0]))
     return (ar,br)
-´´´
+```
 
 4.  **División**
 
-´´´
+```
 def division(a,b):
     aux=((a[1]**2)+(b[1]**2))
     ar=((a[0]*a[1])+(b[0]*b[1]))/aux
     br=((a[1]*b[0])-(a[0]*b[1]))/aux
     return (ar,br)
-´´´
+```
 
 5. **Conjugado**
 
-´´´
+```
 def conjugado(a):
     ar=a[0]
     br=a[1]*-1
     return (ar,br)
-´´´
+```
 
 6. **Opuesto**
 
-´´´
+```
 def opuesto(a):
     ar=a[0]*-1
     br=a[1]*-1
     return (ar,br)
-´´´
+```
 
 7. **Modulo**
 
-´´´
+```
 def modulo(a):
     r=((a[0]**2)+(a[1]**2))**0.5
     return r
-´´´
+```
 
 8. **Cartesianas a polares**
 
-´´´
+```
 def cartesianasAPolares(a):
     alpha=math.atan(a[1]/a[0])
     ar=(a[0]**2+a[1]**2)**5
     br=alpha*(180/math.pi)
     return(ar,br)
-´´´
+```
 
 9. **Polares a Cartesianas**
 
-´´´
+```
 def polaresACartesianas(a):
     h=a[0]
     alpha=a[1]*(math.pi/180)
     ar=h*math.cos(alpha)
     br=h*math.sin(alpha)
     return (ar,br)
-´´´
+```
 
 10. **Retornar fase**
 
-´´´
+```
 def fase(a):
     ar=math.atan2(a[1],a[0])
     return (ar)
-´´´
+```
