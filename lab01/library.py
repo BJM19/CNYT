@@ -1,4 +1,3 @@
-from sys import stdin
 import math
 def suma(a,b):
     ar=a[0]+b[0]
@@ -7,32 +6,37 @@ def suma(a,b):
 def resta(a,b):
     ar=a[0]-b[0]
     br=a[1]-b[1]
-    return ar,br
+    return (ar,br)
 def producto(a,b):
     ar=((a[0]*b[0])+((a[1]*b[1])*-1))
     br=((a[0]*b[1])+(a[1]*b[0]))
-    return ar,br
+    return (ar,br)
 def division(a,b):
     aux=((a[1]**2)+(b[1]**2))
     ar=((a[0]*a[1])+(b[0]*b[1]))/aux
     br=((a[1]*b[0])-(a[0]*b[1]))/aux
-    return ar,br
+    return (ar,br)
 def modulo(a):
     r=((a[0]**2)+(a[1]**2))**0.5
     return r
-def conjugado(a,b):
+def conjugado(a):
     ar=a[0]
     br=a[1]*-1
-    return ar,br
+    return (ar,br)
 def opuesto(a):
     ar=a[0]*-1
     br=a[1]*-1
-    return ar,br
-def CartesianasAPolares(a):
-    p=modulo(a)
-    t=math.degrees(math.atan(a[0]/a[1]))
-    return t
-def adicionDeVectoresComplejos(a,b):
+    return (ar,br)
+def cartesianasAPolares(a):
+    teta=math.atan(a[1]/a[0])
+    return((a[0]**2+a[1]**2)**5,teta*(180/math.pi))
+def polaresACartesianas(a):
+    hipotenusa=a[0]
+    teta=a[1]*(math.pi/180)
+    return (hipotenusa*math.cos(teta),hipotenusa*math.sin(teta))
+def fase(a):
+    return math.atan2(a[1],a[0])
+"""def adicionDeVectoresComplejos(a,b):
     res=[]
     if len(a)==len(b):
         for i in range(len(b)):
@@ -81,7 +85,7 @@ def conjugadaMatriz(a):
             res.append(conjugado(a[i][j]))
     return [res]
 def adjunta(a):
-    return (conjugadaMatriz(traspuesta(a)))
+    return (conjugadaMatriz(traspuesta(a)))"""
            
 
 
