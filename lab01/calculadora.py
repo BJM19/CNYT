@@ -28,7 +28,7 @@ def opuesto(a):
     br=a[1]*-1
     return (ar,br)
 def cartesianasAPolares(a):
-    alpha=math.atan(a[1]/a[0])
+    alpha=math.atan2(a[1]/a[0])
     ar=(a[0]**2+a[1]**2)**5
     br=alpha*(180/math.pi)
     return(ar,br)
