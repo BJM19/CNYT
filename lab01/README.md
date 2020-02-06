@@ -21,13 +21,13 @@ def suma(a,b):
 
 Se realiza la resta de dos numeros complejos (a+b**i**)-(c+d**i**)
 ```
-def suma(a,b):
-    ar=a[0]+b[0]
-    br=a[1]+b[1]
+def resta(a,b):
+    ar=a[0]-b[0]
+    br=a[1]-b[1]
     return (ar,br)
 ```
 
-3. **Multiplicación**
+3. **Producto**
 
 Se realiza el producto de dos numeros complejos (a+b**i**)`*`(c+d**i**)
 
@@ -75,6 +75,8 @@ def opuesto(a):
 
 7. **Modulo**
 
+Se realiza el modulo de un número complejo modulo(a+b**i**)
+
 ```
 def modulo(a):
     r=((a[0]**2)+(a[1]**2))**0.5
@@ -82,6 +84,8 @@ def modulo(a):
 ```
 
 8. **Cartesianas a polares**
+
+Se realiza la coversion de cartesianas a polares
 
 ```
 def cartesianasAPolares(a):
@@ -93,6 +97,8 @@ def cartesianasAPolares(a):
 
 9. **Polares a Cartesianas**
 
+Se realiza la coversion de polares a cartesianas
+
 ```
 def polaresACartesianas(a):
     h=a[0]
@@ -103,6 +109,8 @@ def polaresACartesianas(a):
 ```
 
 10. **Retornar fase**
+
+Se encuentra la fase
 
 ```
 def fase(a):
