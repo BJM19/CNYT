@@ -2,8 +2,13 @@
 
 # Calculadora de números complejos
 Se realizo una calculadora para números complejos con las operaciones algebraicas mas conocidas y unas trasnformaciones.\
+
+En la primera version se manejan las siguientes operaciones
+# Version 1
 Las operaciones son:
 1. **Suma**
+
+Se realiza la suma de dos numeros complejos (a+b**i**)+(c+d**i**)
 
 ```
 def suma(a,b):
@@ -14,6 +19,7 @@ def suma(a,b):
 
 2. **Resta**
 
+Se realiza la resta de dos numeros complejos (a+b**i**)-(c+d**i**)
 ```
 def suma(a,b):
     ar=a[0]+b[0]
@@ -23,6 +29,8 @@ def suma(a,b):
 
 3. **Multiplicación**
 
+Se realiza el producto de dos numeros complejos (a+b**i**)`*`(c+d**i**)
+
 ```
 def producto(a,b):
     ar=((a[0]*b[0])+((a[1]*b[1])*-1))
@@ -31,6 +39,8 @@ def producto(a,b):
 ```
 
 4.  **División**
+
+Se realiza el division de dos numeros complejos (a+b**i**)/(c+d**i**)
 
 ```
 def division(a,b):
@@ -42,6 +52,8 @@ def division(a,b):
 
 5. **Conjugado**
 
+Se realiza el conjugado de un número complejo conjugado(a+b**i**)
+
 ```
 def conjugado(a):
     ar=a[0]
@@ -50,6 +62,9 @@ def conjugado(a):
 ```
 
 6. **Opuesto**
+
+
+Se realiza el opuesto de un número complejo opuesto(a+b**i**)
 
 ```
 def opuesto(a):
