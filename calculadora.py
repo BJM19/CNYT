@@ -54,10 +54,14 @@ def inverso(a):
     for i in range(len(a)):
         res.append(opuesto(a[i]))
     return res
+def productoEscalar(a,b):
+    ar=a[0]*b
+    br=a[1]*b
+    return (ar,br)
 def escalarVector(a,b):
     res=[]
     for i in range(len(a)):
-        res.append(producto(b,a[i]))
+        res.append(productoEscalar(a[i],b))
     return res
 def sumaDeMatrices(a,b):
     for i in range(len(a)):
@@ -92,5 +96,26 @@ def conjugadaMatriz(a):
 def adjunta(a):
     return (conjugadaMatriz(traspuesta(a)))
            
-
+def productoMatrices(a,b):
+    pass
+    """for i in range(len(a)):
+        mat=[]
+        for j in range(len(b)):
+            fil=[]"""
+def tensorVector (a, b):
+     for i in range(len (a)):
+          res = []
+          for j in range(len (b)):
+               res.append(producto(a[i],b[j]))
+          a[i] = res
+     return a
+def tensorVector (a, b):
+     for i in range(len (a)):
+         res=[]
+         for j in range(len (b)):
+             res.append(producto(a[i],b[j]))
+        a[i] = res
+     return a
+            
+    
 
