@@ -95,27 +95,30 @@ def conjugadaMatriz(a):
     return [res]
 def adjunta(a):
     return (conjugadaMatriz(traspuesta(a)))
-           
-def productoMatrices(a,b):
-    pass
-    """for i in range(len(a)):
-        mat=[]
-        for j in range(len(b)):
-            fil=[]"""
-def tensorVector (a, b):
-     for i in range(len (a)):
-          res = []
-          for j in range(len (b)):
-               res.append(producto(a[i],b[j]))
-          a[i] = res
-     return a
-def tensorVector (a, b):
-     for i in range(len (a)):
-         res=[]
-         for j in range(len (b)):
-             res.append(producto(a[i],b[j]))
-        a[i] = res
-     return a
-            
+def multiplicacionMatices(m1,m2):
+    sol = []
+    for i in range(len(m1)):
+        l = []
+        for j in range(len(m2[0])):
+            aux = (0,0)
+            for k in range(len(m2)):
+                sumas= producto(m1[i][k],m2[k][j])
+                aux= suma(sumas,aux) 
     
+            l.append(aux)
+        sol.append(l)
+    return (sol)
 
+def tensorVector(a,b):
+    sol=[]
+    for x in range(len(a)):
+        for y in range(len(b)):
+            sol.append(producto(a[x],b[y]))
+    return sol
+
+def tensorMatrices(a,b):
+    sol=[]
+    for i in range(len(a)):
+        for j in range(len(b)):
+             sol.append(tensorVector(a[i],b[j]))
+    return sol
