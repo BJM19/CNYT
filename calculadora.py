@@ -165,10 +165,10 @@ def multiplicacionEntreMatriz(m1,m2):
             aux.append(cont)
         finnalMat.append(aux)
     return (finnalMat)
-def esHermitian(m):
+def esUnaHermitiana(m):
     if len(m) != len(m[0]):  raise ("La matriz no es cuadrada")
     return m == adjunta(matriz)
-def esUnitaria(m):
+def esUnaUnitaria(m):
     if len(m) != len(m[0]):  raise ("La matriz no es cuadrada")
     i = [[(float(0),float(0)) for w in range(len(m))]for j in range(len(m))]
     for k in range(len(i)):
