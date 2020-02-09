@@ -62,43 +62,52 @@ def escalarVector(a,b):
         res.append(productoEscalar(a[i],b))
     return res
 def sumaDeMatrices(a,b):
+    sol=[]
     for i in range(len(a)):
         res=[]
         for j in range(len(b)):
             res.append(suma(a[i][j],b[i][j]))
-    return res
+        sol.append(res)
+    return sol
 def inversaMatriz(a):
+    sol=[]
     for i in range(len(a)):
         res=[]
         for j in range(len(a)):
             res.append(opuesto(a[i][j]))
-    return [res]
+        sol.append(res)
+    return sol
 def multiplicacionEscalarMatrices(a,b):
     for i in range(len(a)):
         res=[]
         for j in range(len(a)):
-            res.append(producto(b,a[i][j]))
+            res.append(productoEscalar(a[i][j],b))
     return [res]
 def productoInternoDeVectores(a,b):
     aux = []
     res = [0,0]
     if len(a)==len(b):
-        for i in range(len(vec1)):
-           aux.append(multiplicar(a[i],b[i]))
-           resu = sumar(res,aux[i])
+        for i in range(len(a)):
+           aux.append(producto(a[i],b[i]))
+           res = suma(res,aux[i])
     return(res)
 def traspuesta(a):
-    m=[[0]*len(a[0])]*len(a)
-    for i in range(len(a)):
-        for j in range(len(a[0])):
-            m[i][j]=a[j][i]
-    return m
+    res=[]
+    for i in range(len(a[0])):
+        t = []
+        for j in range(len(a)):
+            t.append(a[j][i])
+        res.append(t)
+    return res
+
 def conjugadaMatriz(a):
+    sol=[]
     for i in range(len(a)):
         res=[]
         for j in range(len(a)):
             res.append(conjugado(a[i][j]))
-    return [res]
+        sol.append(res)
+    return sol
 def adjunta(a):
     return (conjugadaMatriz(traspuesta(a)))
 def multiplicacionMatices(m1,m2):
@@ -135,15 +144,15 @@ def productoInternoEntreVectores(a,b):
     if len(a)==len(b):
         cont = 0
         for i in range(len(a)):
-            res = multiplicar(a[i],b[i])
+            res = producto(a[i],b[i])
     return (res)
 def distanciaEntreDosVectores(a,b):
     res = []
     sol = [0,0]
     if len(a)==len(b):
-        for i in range(len(vec1)):
+        for i in range(len(a)):
             a.append(resta(a[i],b[i]))
-        for j in range(len(resu)):
+        for j in range(len(res)):
             solucion = suma(solucion,potenciaCuadrada(res[j]))
     sol[0]=sol[0]**0.5
     return (sol)
@@ -153,33 +162,21 @@ def normaDeVector(a):
         sol = suma(sol,potenciaCuadrada(a[i]))
     sol[0]=sol[0]**0.5
     return(sol)
-def multiplicacionEntreMatriz(m1,m2):
-    finnalMat = []
-    for i in range(len(m1)):
-        aux = []
-        for j in range(len(m2[0])):
-            cont = (0,0)
-            for k in range(len(m2)):
-                sums = multiplicar(m1[i][k],m2[k][j])
-                cont = suma(sums,cont) 
-            aux.append(cont)
-        finnalMat.append(aux)
-    return (finnalMat)
 def esUnaHermitiana(m):
     if len(m) != len(m[0]):  raise ("La matriz no es cuadrada")
-    return m == adjunta(matriz)
+    return m == adjunta(m)
 def esUnaUnitaria(m):
     if len(m) != len(m[0]):  raise ("La matriz no es cuadrada")
     i = [[(float(0),float(0)) for w in range(len(m))]for j in range(len(m))]
     for k in range(len(i)):
         i[k][k] = (float(1),float(0))
-    return multiplicacionEntreMatriz(m,adjunta(matriz)) == multiplicacionEntreMatriz(adjunta(matriz),matriz) == i
+    return multiplicacionMatices(m,adjunta(m)) == multiplicacionMatices(adjunta(m),m) == i
 def productoInternoEntreMatrices(m1,m2):
-    adj = matrizAdjunta(m1)
-    aux = multiplicacionEntreMatriz(adj,m2)
+    adj = adjunta(m1)
+    aux = multiplicacionMatices(adj,m2)
     res = (0,0)
     for i in range(len (aux)):
         res = suma(res,aux[i][i])
     return modulo(res)
 def normaMatriz (m):
-    return round(m.sqrt(productoInternoEntreMatrices(m,m)),2)
+    return round(productoInternoEntreMatrices(m,m)**0.5,2)

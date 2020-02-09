@@ -36,5 +36,69 @@ class TestCases(unittest.TestCase):
     def test_deberiaDevolverLaFase(self):
         a=(2,2)
         self.assertEqual(calculadora.fase(a),(0.7853981633974483))
+    def test_deberiaSumarDosVectoresDeNumerosComplejos(self):
+        a=([(2,2),(3,3)])
+        b=([(2,2),(3,3)])
+        self.assertEqual(calculadora.adicionDeVectoresComplejos(a,b),[(4, 4), (6, 6)])
+    def test_deberiaDarElInversoDeUnVectorDeNumerosCompejos(self):
+        a=([(2,2),(3,3)])
+        self.assertEqual(calculadora.inverso(a),[(-2, -2), (-3, -3)])
+    def test_deberiaMulplicarUnEscalarPorUnVectorNumerosComplejos(self):
+        a=([(2,2),(3,3)])
+        b=2
+        self.assertEqual(calculadora.escalarVector(a,b),[(4, 4), (6, 6)])
+    def test_deberiaRelizarLaSumaDeDosMatricesDeNumerosComplejos(self):
+        a=([[(2,2),(3,3)],[(2,2),(3,3)]])
+        b=([[(2,2),(3,3)],[(2,2),(3,3)]])
+        self.assertEqual(calculadora.sumaDeMatrices(a,b),[[(4, 4), (6, 6)], [(4, 4), (6, 6)]])
+    def test_deberiaDevolverLaInversaDeUnaMaatriz(self):
+        a=([[(2,2),(3,3)],[(2,2),(3,3)]])
+        self.assertEqual(calculadora.inversaMatriz(a),[[(-2, -2), (-3, -3)], [(-2, -2), (-3, -3)]])
+    def test_deberiaRealizarElProductoEntreDosMatricesDeNumerosComplejos(self):
+         a=([[(2,2),(3,3)],[(2,2),(3,3)]])
+         b=3
+         self.assertEqual(calculadora.multiplicacionEscalarMatrices(a,b),[[(6, 6), (9, 9)]])
+    def test_deberiaRealizarElProductoInternoEntreDosVectoresDeNumerosComplejos(self):
+        a=([(2,2),(3,3)])
+        b=([(2,2),(3,3)])
+        self.assertEqual(calculadora.productoInternoDeVectores(a,b),(0, 26))
+    def test_deberiaRealizarLaTrnspuestaDeUnaMatrizDeNumerosComplejos(self):
+        a=([[(2,2),(3,3)],[(2,2),(3,3)]])
+        self.assertEqual(calculadora.traspuesta(a),[[(2, 2), (2, 2)], [(3, 3), (3, 3)]])
+    def test_deberiaRealizarLaConjugadaDeUnaMatrizDeNumerosComplejos(self):
+         a=([[(2,2),(3,3)],[(2,2),(3,3)]])
+         self.assertEqual(calculadora.conjugadaMatriz(a),[[(2, -2), (3, -3)], [(2, -2), (3, -3)]])
+    def test_deberiaRealizarLaAdjuntaDeUnaMatrizDeNumerosComplejos(self):
+         a=([[(2,2),(3,3)],[(2,2),(3,3)]])
+         self.assertEqual(calculadora.adjunta(a),[[(2, -2), (2, -2)], [(3, -3), (3, -3)]])
+    def test_deberiaRealizarLaMultiplicacionDeDosMatricesDeNumerosComplejos(self):
+         a=([[(2,2),(3,3)],[(2,2),(3,3)]])
+         b=([[(2,2),(3,3)],[(2,2),(3,3)]])   
+         self.assertEqual(calculadora.multiplicacionMatices(a,b),[[(0, 20), (0, 30)], [(0, 20), (0, 30)]])
+    def test_deberiaRealizarElProductoTensorEntreDosVectoresDeNumerosComplejos(self):
+        a=([(2,2),(3,3)])
+        b=([(2,2),(3,3)])
+        self.assertEqual(calculadora.tensorVector(a,b),[(0, 8), (0, 12), (0, 12), (0, 18)])
+    def test_deberiaRealizarLaMultiplicacionDeDosMatricesDeNumerosComplejos(self):
+        a=([[(2,2),(3,3)],[(2,2),(3,3)]])
+        b=([[(2,2),(3,3)],[(2,2),(3,3)]])   
+        self.assertEqual(calculadora.tensorMatrices(a,b),[[(0, 8), (0, 12), (0, 12), (0, 18)], [(0, 8), (0, 12), (0, 12), (0, 18)], [(0, 8), (0, 12), (0, 12), (0, 18)], [(0, 8), (0, 12), (0, 12), (0, 18)]])
+    def test_deberiaRealizarElProductoInternoEntreDosVectoresDeNumerosComplejos(self):
+        a=([(2,2),(3,3)])
+        b=([(2,2),(3,3)])
+        self.assertEqual(calculadora.productoInternoEntreVectores(a,b),(0, 18))
+    def test_deberiaRealizarLaDistanciaEntreDosVectoresDeNumerosComplejos(self):
+        a=([(2,2),(3,3)])
+        b=([(2,2),(3,3)])
+        self.assertEqual(calculadora.distanciaEntreDosVectores(a,b),[0.0, 0])
+    def test_deberiaComprobarSiUnaMatrizEsHerminitiana(self):
+        a=([[(0,0),(1,0)],[(1,0),(0,0)]])
+        self.assertEqual(calculadora.esUnaHermitiana(a),True)
+    def test_deberiaComprobarSiUnaMatrizEsUnitaria(self):
+        a=([[(0,0),(1,0)],[(1,0),(0,0)]])
+        self.assertEqual(calculadora.esUnaUnitaria(a),True)
+    def test_deberiaRealizarLaNormaDeUnaMatriz(self):
+        a=([[(0,0),(1,0)],[(1,0),(0,0)]])
+        self.assertEqual(calculadora.normaMatriz(a),1.41)
 if __name__=="__main__":
     unittest.main()
