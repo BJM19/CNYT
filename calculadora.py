@@ -130,7 +130,7 @@ def tensorMatrices(a,b):
     return sol
 def potenciaCuadrada(num):
     return(producto(num,num))
-def productoInternoVectores(a,b):
+def productoInternoEntreVectores(a,b):
     res = []
     if len(a)==len(b):
         cont = 0
