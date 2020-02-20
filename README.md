@@ -1,4 +1,4 @@
-## CNYT
+
 
 # Calculadora de números complejos
 Se realizo una calculadora para números complejos con las operaciones algebraicas mas conocidas y unas trasnformaciones.\
