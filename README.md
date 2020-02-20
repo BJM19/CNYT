@@ -1,7 +1,7 @@
 
 
 # Calculadora de números complejos
-Se realizo una calculadora para números complejos con las operaciones algebraicas mas conocidas y unas trasnformaciones.\
+Se realizo una calculadora para números complejos con las operaciones algebraicas mas conocidas y unas trasnformaciones.
 
 En la primera version se manejan las siguientes operaciones
 # Version 1
