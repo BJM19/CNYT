@@ -139,13 +139,6 @@ def tensorMatrices(a,b):
     return sol
 def potenciaCuadrada(num):
     return(producto(num,num))
-def productoInternoEntreVectores(a,b):
-    res = []
-    if len(a)==len(b):
-        cont = 0
-        for i in range(len(a)):
-            res = producto(a[i],b[i])
-    return (res)
 def distanciaEntreDosVectores(a,b):
     res = []
     sol = [0,0]
