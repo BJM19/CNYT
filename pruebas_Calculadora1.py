@@ -87,10 +87,6 @@ class TestCases(unittest.TestCase):
         a=([(2,2),(3,3)])
         b=([(2,2),(3,3)])
         self.assertEqual(calculadora.productoInternoEntreVectores(a,b),(0, 18))
-    def test_deberiaRealizarLaDistanciaEntreDosVectoresDeNumerosComplejos(self):
-        a=([(2,2),(3,3)])
-        b=([(2,2),(3,3)])
-        self.assertEqual(calculadora.distanciaEntreDosVectores(a,b),[0.0, 0])
     def test_deberiaComprobarSiUnaMatrizEsHerminitiana(self):
         a=([[(0,0),(1,0)],[(1,0),(0,0)]])
         self.assertEqual(calculadora.esUnaHermitiana(a),True)
