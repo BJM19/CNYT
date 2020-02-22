@@ -3,6 +3,15 @@
 # Calculadora de números complejos
 Se realizo una calculadora para números complejos con las operaciones algebraicas mas conocidas y unas trasnformaciones.
 
+
+# Como se instala?
+Para instalar esta libreria se realizan los iguientes pasos:
+
+Entrar a la carpeta del ordenador donde deseamos descargar la libreria.
+Utilizar el comando git clone, junto con el link de nuestra libreria (git clone https://github.com/BJM19/CNYT.git)
+Una vez clonada la libreria, procedemos a abrir un editor de código.
+Finalmente hacemos uso de la libreria.
+
 En la primera version se manejan las siguientes operaciones
 # Version 1
 Las operaciones son:
@@ -342,5 +351,7 @@ def tensorMatrices(a,b):
              sol.append(tensorVector(a[i],b[j]))
     return sol
 ```
+# Licencia 
 
+Todo el código incluido es código libre y puede ser usado por cualquier persona 
 
