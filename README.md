@@ -353,5 +353,5 @@ def tensorMatrices(a,b):
 ```
 # Licencia 
 
-Todo el código incluido es código libre y puede ser usado por cualquier persona 
+Todo el código incluido, es código libre y puede ser usado por cualquier persona.
 
