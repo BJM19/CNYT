@@ -123,7 +123,25 @@ def multiplicacionMatices(m1,m2):
             l.append(aux)
         sol.append(l)
     return (sol)
+def vectorTranspuesto(vector):
+    return vector
+def vectorAdjunto(v):
+    a=conjugado(v)
+    b=vectorTranspuesto(a)
+    return b
 
+def moduloDeUnVector(v):
+    res=0
+    for i in v:
+        res+=modulo(i)
+    return round(res,2)
+def productoDeDosVectores(v1,v2):
+    respuesta=[]
+    if len(v1)==len(v2):
+        sol=(0,0)
+        for i in range(len(v1)):
+            sol=suma(final,multi(v1[i],v2[i]))
+        return sol
 def tensorVector(a,b):
     sol=[]
     for x in range(len(a)):
@@ -173,3 +191,15 @@ def productoInternoEntreMatrices(m1,m2):
     return modulo(res)
 def normaMatriz (m):
     return round(productoInternoEntreMatrices(m,m)**0.5,2)
+
+#Ejercicio sistema cuantico de una particula en una linea
+
+def probability(pos,vector):
+    moduloAux=modulo(vector[pos])
+    moduloVector=moduloDeUnVector(vector)
+    probabilidad=(moduloAux/moduloVector)*100
+    return round(probabilidad,2)
+def transition(v1,v2):
+    conjunto=vectorAdjunto(v2)
+    sol=productoDeDosVectores(conjunto,v1)
+    return sol  
