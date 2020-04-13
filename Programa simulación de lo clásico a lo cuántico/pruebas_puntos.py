@@ -2,13 +2,13 @@ import unittest,Puntos
 import math as m
 
 class TestCases(unittest.TestCase):
-     def test_canicas(self):
+     def test_deberiasacarelvectorcanicas(self):
         solucion = [[(0, 0)], [(0, 0)], [(0, 20)], [(0, 3)], [(0, 2)], [(0, 14)]]
         a = [[(0, 0), (0, 0), (0, 0), (0, 0), (0, 1), (0, 0)], [(0, 0), (0, 0), (0, 0), (0, 1), (0, 0), (0, 0)], [(0, 0), (1, 0), (0, 0), (0, 0), (0, 0), (1, 0)], [(0, 0), (0, 0), (0, 0), (1, 0), (0, 0), (0, 0)], [(0, 0), (0, 0), (1, 0), (0, 0), (0, 0), (0, 0)], [(1, 0), (0, 0), (0, 0), (0, 0), (1, 0), (0, 0)]]
         b = 0
         c = [[(9, 0), (5, 0), (1, 0), (2, 0), (3, 0), (13, 0)]]
         self.assertEqual(Puntos.canicas(a, b, c), solucion)
-     def test_balas(self):
+     def test_deberiasacarelvectorbalas(self):
         solucion = [[(0.0, 0.0)], [(0.0, 0.0)], [(0.0, 0.0)], [(0.0, 0.0)], [(0.0, 0.0)], [(0.0, 0.0)], [(0.0, 0.0)], [(0.0, 0.0)]]
         a = [[(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1 / 3, 0), (0, 0), (0, 0)],
              [(1 / 2, 0), (0, 0), (0, 0), (0, 0), (1 / 3, 0), (0, 0), (0, 0), (0, 0)],
@@ -21,7 +21,7 @@ class TestCases(unittest.TestCase):
         b = 1
         c = [[(1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]]
         self.assertEqual(Puntos.balas(a, b,c),solucion)
-     def test_flash(self):
+     def test_deberiasacarelflash(self):
         solucion=[[0.0, 0.0, 0.0, 0.0, 0.0, 0.3333333333333333, 0.0, 0.0], [0.5, 0.0, 0.0, 0.0, 0.3333333333333333, 0.0, 0.0, 0.0], [0.5, 0.0, 0.0, 0.0, 0.3333333333333333, 0.0, 0.0, 0.0], [0.0, 0.3333333333333333, 0.0, 1.0, 0.3333333333333333, 0.0, 0.0, 0.3333333333333333], [0.0, 0.3333333333333333, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0], [0.0, 0.3333333333333333, 0.3333333333333333, 0.0, 0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.3333333333333333, 0.0, 0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.3333333333333333, 0.0, 0.0, 0.0, 0.0, 1.0]]
         a = [[(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1 / 3, 0), (0, 0), (0, 0)],
              [(1 / 2, 0), (0, 0), (0, 0), (0, 0), (1 / 3, 0), (0, 0), (0, 0), (0, 0)],
@@ -34,24 +34,24 @@ class TestCases(unittest.TestCase):
         b=1
         self.assertEqual(Puntos.flash(a,b),solucion)
      "----------------ejercicio2-----------------------------------"
-     def test_partícula(self):
+     def test_deberiasacarlapartícula(self):
           a=[(-7, -1), (1, -2), (4, 1), (7, 0)]
           solucion=0.0083
           self.assertEqual(Puntos.partícula(a),solucion)
-     def test_normal(self):
+     def test_deberiasacarlanormal(self):
           a=[(-7, -1), (1, -2), (4, 1), (7, 0)]
           solucion=[[(0.091, -0.182), (0.091, -0.182), (0.091, -0.182), (0.091, -0.182)]]
           self.assertEqual(Puntos.normal(a),solucion)
-     def test_spin(self):
+     def test_deberiasacarelspin(self):
           a=[(2, -6), (4, 1)]
           solucion=(4.63, 16.02)
           self.assertEqual(Puntos.spin(a),solucion)
      "----------------------Ejercicio3--------------------------"
-     def test_variance(self):
+     def test_deberiasacarlavarianza(self):
           a=[[(1, 2), (0, -15)], [(2, 4), (3, 0)]]
           b = [[(0.707, 0), (0, 0.707)]]
           self.assertEqual(Puntos.varianza(a,b),-0.1)    
-     def test_proba(self):
+     def test_Deberiasacarlaprobabilidad(self):
         h = 2
         ket = [(1, 0), (0, 1), (1, 0), (0, 0), (1, 0), (1, 0)]
         r = 0.40002432147874584
