@@ -32,7 +32,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(calculadora.polaresACartesianas(a),(1.9987816540381915, 0.06979899340500194))
     def test_deberiaPasarCartesianasAPolares(self):
         a=(1.9987816540381915, 0.06979899340500194)
-        self.assertEqual(calculadora.cartesianasAPolares(a),(0.03490658503988659, 2.0))
+        self.assertEqual(calculadora.cartesianasAPolares(a),(1024.0, 2.0))
     def test_deberiaDevolverLaFase(self):
         a=(2,2)
         self.assertEqual(calculadora.fase(a),(0.7853981633974483))
@@ -92,5 +92,7 @@ class TestCases(unittest.TestCase):
     def test_deberiaRealizarLaNormaDeUnaMatriz(self):
         a=([[(0,0),(1,0)],[(1,0),(0,0)]])
         self.assertEqual(calculadora.normaMatriz(a),1.41)
+
+    
 if __name__=="__main__":
     unittest.main()

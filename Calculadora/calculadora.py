@@ -34,7 +34,7 @@ def opuesto(a):
 def cartesianasAPolares(a):
    theta=math.atan2(a[1],a[0])
    ar=(a[0]**2+a[1]**2)**5
-   br=teta*(180/math.pi)
+   br=theta*(180/math.pi)
    return(ar,br)
 def polaresACartesianas(a):
     h=a[0]
