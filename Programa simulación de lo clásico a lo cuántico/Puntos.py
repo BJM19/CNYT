@@ -49,7 +49,7 @@ def multiplicacionMatrices(a,b):
         for i in range(0, len(a)):
             for j in range(0, len(b[0])):
                 for k in range(0, len(b)):
-                    multi = multiplicacion(a[i][k], b[k][j])
+                    multi = producto(a[i][k], b[k][j])
                     nu = m[i][j]
                     m[i][j] = (multi[0]+nu[0], multi[1]+nu[1])
         return m
@@ -126,16 +126,16 @@ def multiplesRendijas(r, b, v):
             sistema[j][i] = v[i-1]                
     return sistema
 #Ejercicio 2
-def egval(e):
+def equal(e):
     return complex(e[0],e[1])
-def prube(e):
+def prueba(e):
     a=e[0]-0.1
     b=e[1]
     if b>0:
         b=b-0.1
     return (a,b)
 
-def vectorComplex(v):
+def vector_complejo(v):
     tempo=0
     for i in range(len(v)):
         tempo=tempo+(v[i][0]**2+v[i][1]**2)
@@ -150,7 +150,7 @@ def conjugado(a):
             e=(c,d)
             a[x][y]=e
     return a
-def simplifity(a, b):
+def simplicidad(a, b):
     sol = [[(0, 0)] * len(a) for x in range(len(a))]
     for i in range(len(a)):
         for j in range(len(b)):
@@ -168,16 +168,16 @@ def hermitiana(m):
     else:
         return False
 
-def particle(v):
+def partícula(v):
     j = 1
-    normal= vectorComplex(v)
+    normal= vector_complejo(v)
     probabilidad = (j/(normal**2))
     return round(probabilidad, 4)
 
 
-def normalize(v):
+def normal(v):
     j = 1
-    norm = vectorComplex(v)
+    norm = vector_complejo(v)
     new = [[]]
     for i in range(len(v)):
         op1 = (1/norm) * v[j][0]
@@ -187,10 +187,10 @@ def normalize(v):
 
 
 def spin(v):
-    return (round(( v[0][0]**2 + v[0][1]**2/vectorComplex(v)**2), 2),round((v[1][0]**2 + v[1][1]**2/vectorComplex(v)**2), 2))
+    return (round(( v[0][0]**2 + v[0][1]**2/vector_complejo(v)**2), 2),round((v[1][0]**2 + v[1][1]**2/vector_complejo(v)**2), 2))
 
 
-def ident(c, m):
+def identidad(c, m):
     sol = [[(0, 0)] * len(m) for x in range(len(m))]
     for x in range(len(m)):
         for y in range(len(m)):
@@ -215,22 +215,22 @@ def amplitudKet(nu1, nu2, k1, k2):
     return innerProduct(innerProduct(nu1, k1), innerProduct(nu2, k2))
 
 def probabilidad(h, ket):
-    r = vectorComplex(ket)
+    r = vector_complejo(ket)
     x = ket[h]
     y = x
     proba = abs(producto(x, y)[0] + producto(x, y)[1])/(r ** 2)
     return proba
 def varianza(M, v):
     if len(M) == len(v[0]):
-        H = productoMatrices(M, matrizTranspuesta(v))
+        H = multiplicacionMatrices(M, matrizTranspuesta(v))
         w = [[]]
         for j in H:
             w[0].append(j[0])
-        x = productoMatrices(matrizTranspuesta(w), v)
+        x = multiplicacionMatrices(matrizTranspuesta(w), v)
         E = x[0][0][0] + x[1][0][1]
-        m1 = ident(E, M)
-        N = simplifity(M, m1)
-        Delta = productoMatrices(N, N)
+        m1 = identidad(E, M)
+        N = simplicidad(M, m1)
+        Delta = multiplicacionMatrices(N, N)
         r = v
         for i in range(len(v)):
             for j in range(len(v[0])):
@@ -238,8 +238,8 @@ def varianza(M, v):
                 c = x[0] ** 2
                 t = x[1] ** 2
                 r[i][j] = (c, t)
-        Rf = productoMatrices(r, Delta)
-        x = prube(Rf[0][0])
+        Rf = multiplicacionMatrices(r, Delta)
+        x = prueba(Rf[0][0])
         return round(x[0], 2)
     else:
         return False
